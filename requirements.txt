@@ -1,0 +1,31 @@
+transformers[sentencepiece]==4.40.0  #Hugging Face Transformers - sentencepiece is needed for tokenizing text for some models.
+tokenizers == 0.19.1 # stable version suitable for transformer v 4.40.0 
+datasets # if using hugging face
+sacrebleu # evaluation metrics
+rouge_score #evaluation metrics
+py7zr # extracting .7z archive files
+pandas
+nltk
+tqdm
+PyYAML # read .yaml configuration files easily in Python.
+matplotlib
+torch
+notebook
+boto3 # Amazon Web Services SDK for Python. You use this to upload or download files from AWS S3 buckets.
+mypy-boto3-s3 # Type hints and auto-complete support for boto3
+python-box==6.0.2 # Allows you to access dictionary items using dot notation (config.key instead of config['key']).
+ensure==1.0.2 # Utility library to ensure conditions (like type checking or value presence) in code.
+fastapi==0.78.0 # api 
+uvicorn==0.18.3 # An ASGI server used to run FastAPI app
+Jinja2==3.1.2 # Templating engine — useful if you want to render HTML pages (optional for APIs, useful for dashboards).
+
+-e . # creates project as package so without installing the libraries again
+
+
+
+## Additional cmd
+
+
+# pip install --upgrade accelerate
+# pip uninstall -y transformers accelerate
+# pip install transformers accelerate

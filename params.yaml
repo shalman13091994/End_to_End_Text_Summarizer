@@ -1,0 +1,14 @@
+TrainingArguments:
+  num_train_epochs: 1 # one full time to allow the entire dataset
+  warmup_steps: 500 #  gradually increase for the first 500 steps
+  per_device_train_batch_size: 1 #because of gpu
+  weight_decay: 0.01 #Helps prevent overfitting.
+  logging_steps: 10 #Logs loss/metrics every 10 steps 
+  evaluation_strategy: "steps" #Evaluate the model every eval_steps
+  eval_steps: 500 #Run evaluation (e.g. compute metrics) every 500 steps.
+  save_steps: 1e6 #1_000_000
+  gradient_accumulation_steps: 16  
+
+#Instead of updating weights every step, accumulate gradients for 16 steps, then do an update.
+
+# Simulates a larger batch size (1 × 16 = 16), even when your GPU can only handle small batches.

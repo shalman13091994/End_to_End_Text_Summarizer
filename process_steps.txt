@@ -1,0 +1,69 @@
+1. Data Ingestion 📥
+Download or load dataset (from URL, drive, or local).
+
+Extract if it's zipped.
+
+Save raw data to a structured location like artifacts/data_ingestion.
+
+✅ Output: data.csv or dataset in a folder.
+
+2. Data Validation ✅
+Check if all required files are present.
+
+Validate structure: columns like dialogue, summary, etc.
+
+Optional: Check for missing/null values, types.
+
+✅ Output: Status flag or log, and optionally a cleaned file.
+
+3. Data Transformation 🔄
+Load the validated dataset (e.g. CSV or HuggingFace dataset).
+
+Tokenize input (dialogue) and target (summary) using a tokenizer like Pegasus, BART, T5.
+
+Optionally: split into train/test.
+
+Save as a tokenized dataset for model consumption.
+
+✅ Output: Tokenized dataset (train, test) in HuggingFace format.
+
+4. Model Trainer Setup 🏋️‍♂️
+Load pre-trained model (AutoModelForSeq2SeqLM) from HuggingFace.
+
+Configure TrainingArguments: batch size, learning rate, epochs, save steps, evaluation strategy.
+
+Initialize Trainer with model, dataset, tokenizer, and arguments.
+
+✅ Output: Trainer object ready to train.
+
+5. Model Training 🧠
+Train the model using trainer.train().
+
+Logs, checkpoints, and best model saved to disk.
+
+✅ Output: Trained model and tokenizer saved (e.g. in artifacts/model_trainer).
+
+6. Model Evaluation 📊
+Load test dataset.
+
+Generate summaries with model.generate(...).
+
+Decode tokenized output back to text.
+
+Evaluate using ROUGE, BLEU, etc.
+
+✅ Output: Evaluation metrics, predictions vs. references.
+
+7. Prediction / Inference 🔍
+Wrap model and tokenizer into a script or API.
+
+Accept new dialogues and return summaries.
+
+✅ Output: Real-time summary generation!
+
+8. Model Deployment 🚀 (Optional)
+Use FastAPI/Flask for web app.
+
+Dockerize and deploy to Heroku, AWS, etc.
+
+✅ Output: Live web service for summarization.

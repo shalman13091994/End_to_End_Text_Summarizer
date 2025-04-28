@@ -1,6 +1,6 @@
 import setuptools
 
-with open("README.md", "r", encoding="utf-8") as f:
+with open(r"D:\Datascience\DL\DL Projects\End_to_End_Text_Summarizer\README.md", "r", encoding="utf-8") as f:
     long_description = f.read()
 
 
